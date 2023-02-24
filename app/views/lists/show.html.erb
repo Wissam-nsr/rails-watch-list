@@ -1,8 +1,11 @@
 <h1>
 <%=@list.name%>
-<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
 </h1>
+<%# Photo here %>
+<% if photo.attached? %>
+<%=cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
 
+<%# list of movies here %>
 <ul>
   <% @list.bookmarks.each do |bookmark|%>
     <li class="list-group-item">
